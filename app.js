@@ -81,11 +81,6 @@ app.use("/listings/:id/reviews",reviewsRoute);
 app.use("/",signupRouter)
 
 
-// app.all("*", (req, res, next) => {
-//     next(new ExpressError(404, "Page Not Found!!"));
-// });
-
-
 app.use((err, req, res, next) => {
     const status = err.statusCode || 500;
     const message = err.message || "Something went wrong";
@@ -95,6 +90,3 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
     console.log("Listening on port 8080");
 })
-
-
-
