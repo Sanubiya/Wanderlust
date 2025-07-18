@@ -85,6 +85,9 @@ app.use((err, req, res, next) => {
     const message = err.message || "Something went wrong";
     res.status(status).render("listings/error.ejs", { message }); 
 });
+app.all("*", (req, res) => {
+  res.status(404).send("Page Not Found");
+});
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
