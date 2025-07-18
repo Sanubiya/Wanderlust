@@ -76,7 +76,7 @@ app.use((req,res,next)=>{
     next();
  })
  app.get("/",(req,res)=>{
-    res.render("/listings/index.js")
+    res.render("listings/welcome.ejs")
  })
 
 app.use("/listings",listingsRoute);
