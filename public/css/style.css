@@ -1,0 +1,112 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+
+}
+.navbar{
+    height: 5rem;
+    background-color: white !important;
+}
+.nav-lrink{
+    color: #222222 !important;
+    
+}
+/* Footer */
+.f-info {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;     /* Center items horizontally */
+    background-color: #ebebeb;
+    padding: 20px;
+    gap: 10px;
+    /* width: 100vw; */
+}
+
+.f-social,
+.f-brand,
+.f-links {
+    width: 100%;             /* Full width */
+    text-align: center;      /* Center content inside */
+}
+
+.f-social i {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.f-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.f-links a:hover,
+.f-social i:hover {
+    text-decoration: underline;
+}
+
+.card img{
+    width: 100% !important;
+    object-fit: cover !important;
+    height: 20rem;
+    padding: 0 !important;
+    border-radius: 2rem;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+  
+}
+.card-body{
+    padding: 0 !important;
+
+}
+.card-text{
+    font-weight: 400 !important;
+}
+.card-link{
+      text-decoration: none;
+}
+/* Card Effect */
+
+.card-img-top:hover{
+    opacity: 0.7;
+}
+/* New page */
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+    border-radius: 1rem !important;
+}
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    
+}
+.btn-dark{
+    border-radius: 1rem !important;
+
+}
+.btn-show{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
