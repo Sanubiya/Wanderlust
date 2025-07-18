@@ -40,38 +40,4 @@ router.route("/:id")
 
 router.get("/:id/edit",isLoggedIn,isOwner, wrapasync(listingController.editRoute));
 
-// router.get('/listings', async (req, res) => {
-//   const { category } = req.query;
-
-//   let filter = {};
-//   if (category) {
-//     filter.category = category;
-//   }
-
-//   const allListings = await Listing.find(filter);
-//   res.render('listings/show.ejs', { allListings, category });
-// });
-// Show listings by category
-// router.get('/category/:categoryName', async (req, res) => {
-//   const { categoryName } = req.params;
-
-//   // Validate category (optional)
-//   const allowedCategories = [
-//     "Trending", "Pool", "Castles", "Iconic", "Rooms",
-//     "Beach", "Mountains", "TinyHomes", "Camping", "Farms", "Arctic"
-//   ];
-
-//   if (!allowedCategories.includes(categoryName)) {
-//     return res.status(404).send("Category not found");
-//   }
-
-//   const allListings = await Listing.find({ category: categoryName });
-//   res.render('listings/show.ejs', { allListings, category: categoryName });
-// });
-
-
-
-
-
-
 module.exports=router;
