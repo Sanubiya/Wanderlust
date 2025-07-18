@@ -45,7 +45,7 @@ const store=MongoStore.create({
     },
     touchAfter: 24*3600,
 });
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("ERROR MONGO STROE",err)
 });
 
@@ -75,18 +75,18 @@ app.use((req,res,next)=>{
     res.locals.currentUser=req.user
     next();
  })
+ app.get("/",(req,res)=>{
+    res.render("/listings/index.js")
+ })
 
 app.use("/listings",listingsRoute);
 app.use("/listings/:id/reviews",reviewsRoute);
-
+app.use("/", signupRouter);
 
 app.use((err, req, res, next) => {
     const status = err.statusCode || 500;
     const message = err.message || "Something went wrong";
     res.status(status).render("listings/error.ejs", { message }); 
-});
-app.all("*", (req, res) => {
-  res.status(404).send("Page Not Found");
 });
 
 app.listen(8080, () => {
