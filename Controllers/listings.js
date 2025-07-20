@@ -1,5 +1,6 @@
 const Listing = require("../models/listing.js");
 const {listingSchema,}=require("../Schema.js");
+
 module.exports.index=async (req, res) => {
     const allListings = await Listing.find({});
     res.render("listings/index.ejs", { allListings });
@@ -20,7 +21,6 @@ module.exports.createRoute=async (req, res) => {
 module.exports.showRoute=async (req, res) => {
     let { id } = req.params;
     const listing = await Listing.findById(id).populate({path:"reviews",populate:{path:"author"},}).populate("owner");
-    console.log(listing)
     if(!listing){
         req.flash("error","Listing you request for does not exist");
         return res.redirect("/listings");
@@ -56,5 +56,14 @@ module.exports.deleteRoute=async (req, res) => {
     req.flash("success","Listing deleted");
     res.redirect("/listings")
 
-
+}
+module.exports.filterRoute=async(req,res)=>{
+    const { category } = req.query;
+    let allListings;
+    if (category) {
+        allListings = await Listing.find({ category });
+    } else {
+        allListings = await Listing.find({});
+    }
+    res.render("listings/index.ejs", { allListings });
 }
